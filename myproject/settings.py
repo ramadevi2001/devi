@@ -75,8 +75,12 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "restapidb",
+        "USER": "postgres",
+        "PASSWORD": "ramadevi",
+        "HOST": "localhost",
+        "PORT": "5432"
     }
 }
 
@@ -123,7 +127,7 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 {
-  "python.pythonPath": "venv/bin/python",
+  "python.pythonPath": "venv\\Scripts\\python.exe",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
   "python.linting.flake8Enabled": true,
@@ -131,5 +135,16 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
   "python.formatting.provider": "black",
   "editor.formatOnSave": true
 }
+
+INSTALLED_APPS = [
+'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'myapp',
+]
 
 
